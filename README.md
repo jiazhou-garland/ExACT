@@ -1,4 +1,4 @@
-# ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More(Under construction)
+# [🌟CVPR2024🌟]ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More (updating)
 
 This repository contains the official PyTorch implementation of the paper "[ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More](https://vlislab22.github.io/ExACT/)".
 <div align="center">
