@@ -1,24 +1,14 @@
 # EventBind: Learning a Unified Representation to Bind Them All for Event-based Open-world Understanding
 
-This repository contains the official PyTorch implementation of the paper "" paper.
+This repository contains the official PyTorch implementation of the paper "[ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More](https://vlislab22.github.io/ExACT/)".
 <div align="center">
-<img src="image/EventBind.png" width="1300px">
+<img src="image/Framework.png" width="1300px">
 </div>
-
-**The codes and checkpoints will be released ASAP after the paper's decision.**
 
 ---
 # Citation
 If you find this paper useful, please consider staring 🌟 this repo and citing 📑 our paper:
 
-```
- @article{zhou2023clip,
-  title={EventBind: Learning a Unified Representation to Bind Them All for Event-based Open-world Understanding},
-  author={Zhou, Jiazhou and Zheng, Xu and Lyu, Yuanhuiyi and Wang, Lin},
-  journal={arXiv preprint arXiv:2308.03135},
-  year={2023}
-}
-```
 ---
 # Dataset
 <div align=center>
