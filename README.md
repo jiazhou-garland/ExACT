@@ -1,6 +1,6 @@
 # EventBind: Learning a Unified Representation to Bind Them All for Event-based Open-world Understanding
 
-This repository contains the official PyTorch implementation of the paper "[EventBind: Learning a Unified Representation to Bind Them All for Event-based Open-world Understanding](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=JQnsB8MAAAAJ&citation_for_view=JQnsB8MAAAAJ:zYLM7Y9cAGgC)" paper.
+This repository contains the official PyTorch implementation of the paper "" paper.
 <div align="center">
 <img src="image/EventBind.png" width="1300px">
 </div>
