@@ -16,6 +16,7 @@ If you find this paper useful, please consider staring 🌟 this repo and citing
   year={2024}
 }
 ````
+
 ---
 # SeAct Dataset
 
@@ -42,21 +43,21 @@ The following table provides the Download Access to our SeAct dataset, as well a
 |     HARDVS     |                                  [Download](https://github.com/Event-AHU/HARDVS)                                  |
 
 </div>
----
 
+---
 # Model checkpoints
 <div align=center>
 
-|  Datasets     |                                Access to Download Model checkpoints                                                          | 
-|:-------------:|:----------------------------------------------------------------------------------------------------------------------------:|
-|     SeAct     |    [Download Model checkpoints](https://drive.google.com/drive/folders/1ud_PwnWULqJ-nH8InSuzTxJXUFgTmJkw?usp=drive_link)     |  
-|      PAF      |                         [Download Model checkpoints](https://github.com/CrystalMiaoshu/PAFBenchmark)                         | 
-| DVS128Gesture | [Download Model checkpoints](https://research.ibm.com/publications/a-low-power-fully-event-based-gesture-recognition-system) |
-|    HARDVS     |                              [Download Model checkpoints](https://github.com/Event-AHU/HARDVS)                               |
+|  Datasets     |                                            Access to Download Model checkpoints                                       | 
+|:-------------:|:---------------------------------------------------------------------------------------------------------------------:|
+|     SeAct     | [Download Model checkpoints](https://drive.google.com/drive/folders/1ud_PwnWULqJ-nH8InSuzTxJXUFgTmJkw?usp=drive_link) |  
+|      PAF      |  [Download Model checkpoints](https://drive.google.com/file/d/1VfvpqMEyj3oubFBPIAkOG2XlSF298Etu/view?usp=drive_link)  | 
+| DVS128Gesture |  [Download Model checkpoints](https://drive.google.com/file/d/1Kpk-6fR-4-E3Mrwn5DeN1NHerQfYsvx6/view?usp=drive_link)  |
+|    HARDVS     |  [Download Model checkpoints](https://drive.google.com/file/d/1yd5EViMTvVuTyScniluILj5F1vpH7XGA/view?usp=drive_link)  |
 
 </div>
----
 
+---
 # Dependencies
 Please refer to [install.md](../ExACT/docs/install.md) for step-by-step guidance on how to install the packages.
 
