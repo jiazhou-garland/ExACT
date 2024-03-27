@@ -104,8 +104,8 @@ if __name__ == "__main__":
     # event_sampled_val_path_dataset = '/hpc2hdd/home/jiazhouzhou/jiazhouzhou/dataset/DVSGesture_Sampled_val_v2/'
     # train_e = list_collection(event_sampled_train_path_dataset)
     # val_e = list_collection(event_sampled_val_path_dataset)
-    # write_sampled_file('/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Dataloader/DVS128Gesture/DVS128Gesture_sampled_train_v2.txt', train_e)
-    # write_sampled_file('/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Dataloader/DVS128Gesture/DVS128Gesture_sampled_val_v2.txt', val_e)
+    # write_sampled_file('/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Dataloader/DVS128Gesture/DVS128Gesture_sampled_train.txt', train_e)
+    # write_sampled_file('/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Dataloader/DVS128Gesture/DVS128Gesture_sampled_val.txt', val_e)
     #
     # 15000, 30
     event_sampled_train_path_dataset = '/hpc2hdd/home/jiazhouzhou/jiazhouzhou/dataset/DVSGesture_Sampled_train_v3/'

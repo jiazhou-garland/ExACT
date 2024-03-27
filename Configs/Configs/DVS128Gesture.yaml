@@ -44,12 +44,12 @@ MODEL:
 Dataset:
   Input_size: [224,224]
   Train:
-    Path: "/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Dataloader/DVS128Gesture/DVS128Gesture_sampled_train_v2.txt"
+    Path: "/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Dataloader/DVS128Gesture/DVS128Gesture_sampled_train.txt"
     Batch_size: 12  # TODO ablation
     Representation: 'gray_scale' # mlp_learned, frame, gray_scale, rgb # TODO ablation
     Agumentation: False
   Val:
-    Path: "/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Dataloader/DVS128Gesture/DVS128Gesture_sampled_val_v2.txt"
+    Path: "/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Dataloader/DVS128Gesture/DVS128Gesture_sampled_val.txt"
     Batch_size: 1 # TODO ablation
     Representation: 'gray_scale' # mlp_learned, frame, gray_scale, rgb # TODO ablation
     Agumentation: False

@@ -12,7 +12,7 @@ Trainer:
   seed: 101 # 3407 42 114514
 
 MODEL:
-  Load_Path: "/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Result/test-w/DVS128Gesture/DVS128Gesture-[98.96].bin"
+  Load_Path: "Path-to-DVS128Gesture-[98.96].bin" # TODO Change to your directory
 #  Load_Path: None
   BACKBONE:
     Name: "ViT-B/16"
@@ -20,48 +20,48 @@ MODEL:
     # CLIP model default is float16
     PRE_ENCODING: "fp16"
     #Download path to PRE_trained_model
-    PRE_trained_model: '/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/pretrained_CLIP/ViT-B-16.pt'
+    PRE_trained_model: 'Path-to/pretrained_CLIP/ViT-B-16.pt' # TODO Change to your directory
   EventEncoder:
     train_clip_backbone: True
     # feature output from the No.3 ViT block, -1 denotes output whithout the low-level ferature
-    use_cross_frame_prompts: True # TODO ablation
-    use_event_modality_prompts: True # TODO ablation
+    use_cross_frame_prompts: True
+    use_event_modality_prompts: True
     num_event_modality_prompts: 16
-    use_temporal_encoding: True # TODO ablation
+    use_temporal_encoding: True
     Low_level_feature_idx: [1]
   TextEncoder:
-    init_ctx: True # TODO ablation
-    CTX_INIT: "A series of photos recording human action for" #"A series of photos recording human action for" # A sketch image of a
+    init_ctx: True
+    CTX_INIT: "A series of photos recording human action for"
     # length of text prompts
-    leranable_ctx: True # TODO ablation
-    N_CTX: 16 # TODO ablation
+    leranable_ctx: True
+    N_CTX: 16
     use_event_bias_textual_prompts: False
   Conceptualizing_Alignment:
-    num_concept: 1  # 32 16  8  4   2 TODO ablation
-    concept_dim: 512 # 16 32 64 128 256 TODO ablation
+    num_concept: 1  # 32 16  8  4   2
+    concept_dim: 512 # 16 32 64 128 256
     sample_num: 5
 
 Dataset:
   Input_size: [224,224]
   Train:
-    Path: "/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Dataloader/DVS128Gesture/DVS128Gesture_sampled_train_v2.txt"
-    Batch_size: 12  # TODO ablation
-    Representation: 'gray_scale' # mlp_learned, frame, gray_scale, rgb # TODO ablation
+    Path: "Path-to-/DVS128Gesture_sampled_train.txt" # TODO Change to your directory
+    Batch_size: 12
+    Representation: 'gray_scale' # mlp_learned, frame, gray_scale, rgb
     Agumentation: False
   Val:
-    Path: "/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Dataloader/DVS128Gesture/DVS128Gesture_sampled_val_v2.txt"
-    Batch_size: 1 # TODO ablation
-    Representation: 'gray_scale' # mlp_learned, frame, gray_scale, rgb # TODO ablation
+    Path: "Path-to-/DVS128Gesture_sampled_val.txt" # TODO Change to your directory
+    Batch_size: 1
+    Representation: 'gray_scale' # mlp_learned, frame, gray_scale, rgb
     Agumentation: False
-  Classnames: "/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Dataloader/DVS128Gesture/DVS128Gesture.json"
+  Classnames: "Path-to-/DVS128Gesture.json" # TODO Change to your directory
 
 LossFunction:
   loss_sigma_threshold: 15000
-  loss_cross_entroy: False # TODO ablation
-  loss_cross_entroy_ori: False # TODO ablation
-  loss_logsigma_sum: True # TODO ablation
-  loss_SmoothL1Loss_txt: True # TODO ablation
-  loss_SmoothL1Loss_ev: True # TODO ablation
+  loss_cross_entroy: False
+  loss_cross_entroy_ori: False
+  loss_logsigma_sum: True
+  loss_SmoothL1Loss_txt: True
+  loss_SmoothL1Loss_ev: True
 
 
 

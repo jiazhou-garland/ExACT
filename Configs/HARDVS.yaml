@@ -12,55 +12,55 @@ Trainer:
   seed: 101 # 3407 42 114514
 
 MODEL:
-  Load_Path: "/home/jinjing/zhoujiazhou/ExACT_github/Result/test-w/HARDVS/HARDVS-[90.10].bin"
+  Load_Path: "Path-to-/HARDVS-[90.10].bin" # TODO Change to your directory
   BACKBONE:
     Name: "ViT-B/16"
     Path:
     # CLIP model default is float16
     PRE_ENCODING: "fp16"
     #Download path to PRE_trained_model
-    PRE_trained_model: '/home/jinjing/zhoujiazhou/ExACT_github/pretrained_CLIP/ViT-B-16.pt'
+    PRE_trained_model: 'Path-to-/ViT-B-16.pt' # TODO Change to your directory
   EventEncoder:
     train_clip_backbone: True
     # feature output from the No.3 ViT block, -1 denotes output whithout the low-level ferature
-    use_cross_frame_prompts: True # TODO ablation
-    use_event_modality_prompts: True # TODO ablation
+    use_cross_frame_prompts: True
+    use_event_modality_prompts: True
     num_event_modality_prompts: 16
-    use_temporal_encoding: True # TODO ablation
+    use_temporal_encoding: True
     Low_level_feature_idx: [1]
   TextEncoder:
-    init_ctx: True # TODO ablation
+    init_ctx: True
     CTX_INIT: "A series of photos recording human action for" #"A series of photos recording human action for" # A sketch image of a
     # length of text prompts
-    leranable_ctx: True # TODO ablation
-    N_CTX: 16 # TODO ablation
+    leranable_ctx: True
+    N_CTX: 16
     use_event_bias_textual_prompts: False
   Conceptualizing_Alignment:
-    num_concept: 1  # 32 16  8  4   2 TODO ablation
-    concept_dim: 512 # 16 32 64 128 256 TODO ablation
+    num_concept: 1  # 32 16  8  4   2
+    concept_dim: 512 # 16 32 64 128 256
     sample_num: 5
 
 Dataset:
   Input_size: [224,224]
   Train:
-    Path: "/home/jinjing/zhoujiazhou/ExACT_github/Dataloader/HARDVS/HARDVS_sampled_train_6_3_1.txt"
-    Batch_size: 24  # TODO ablation
-    Representation: 'gray_scale' # mlp_learned, frame, gray_scale, rgb # TODO ablation
+    Path: "Path-to-/HARDVS_sampled_train_6_3_1.txt" # TODO Change to your directory
+    Batch_size: 24
+    Representation: 'gray_scale' # mlp_learned, frame, gray_scale, rgb
     Agumentation: False
   Val:
-    Path: "/home/jinjing/zhoujiazhou/ExACT_github/Dataloader/HARDVS/HARDVS_sampled_test_6_3_1.txt"
-    Batch_size: 24 # TODO ablation
-    Representation: 'gray_scale' # mlp_learned, frame, gray_scale, rgb # TODO ablation
+    Path: "Path-to-/HARDVS_sampled_test_6_3_1.txt"
+    Batch_size: 24
+    Representation: 'gray_scale' # mlp_learned, frame, gray_scale, rgb
     Agumentation: False
-  Classnames: "/home/jinjing/zhoujiazhou/ExACT_github/Dataloader/HARDVS/HARDVS_300_class.json"
+  Classnames: "Path-to-/HARDVS_300_class.json" # TODO Change to your directory
 
 LossFunction:
   loss_sigma_threshold: 15000
-  loss_cross_entroy: False # TODO ablation
-  loss_cross_entroy_ori: False # TODO ablation
-  loss_logsigma_sum: True # TODO ablation
-  loss_SmoothL1Loss_txt: True # TODO ablation
-  loss_SmoothL1Loss_ev: True # TODO ablation
+  loss_cross_entroy: False
+  loss_cross_entroy_ori: False
+  loss_logsigma_sum: True
+  loss_SmoothL1Loss_txt: True
+  loss_SmoothL1Loss_ev: True
 
 
 
