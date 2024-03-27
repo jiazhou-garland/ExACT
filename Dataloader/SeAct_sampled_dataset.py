@@ -89,7 +89,7 @@ if __name__ == '__main__':
     # test code
     train_path = r".\PAF\PAF_sampled_train.txt"
     tfPath = r".\PAF\PAF.json"
-    tf = open("/ExACT/Dataloader/PAF/PAF.json", "r")
+    tf = open("/ExACT_github/Dataloader/PAF/PAF.json", "r")
     classnames_dict = json.load(tf)  # class name idx start from 0
     classnames_list = [i for i in classnames_dict.keys()]
     datasets = DVS_SA_sampled(train_path)

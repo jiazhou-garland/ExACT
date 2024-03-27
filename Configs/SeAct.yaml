@@ -12,7 +12,7 @@ Trainer:
   seed: 101 # 3407 42 114514
 
 MODEL:
-  Load_Path: '/home/jinjing/zhoujiazhou/ExACT/Result/test-w/SeAct/SeACT-[67.24].bin'
+  Load_Path: '/home/jinjing/zhoujiazhou/ExACT_github/Result/test-w/SeAct/SeACT-[67.24].bin'
 #  Load_Path: None
   BACKBONE:
     Name: "ViT-B/16"
@@ -20,7 +20,7 @@ MODEL:
     # CLIP model default is float16
     PRE_ENCODING: "fp16"
     #Download path to PRE_trained_model
-    PRE_trained_model: '/home/jinjing/zhoujiazhou/ExACT/pretrained_CLIP/ViT-B-16.pt'
+    PRE_trained_model: '/home/jinjing/zhoujiazhou/ExACT_github/pretrained_CLIP/ViT-B-16.pt'
   EventEncoder:
     train_clip_backbone: True
     # feature output from the No.3 ViT block, -1 denotes output whithout the low-level ferature
@@ -54,7 +54,7 @@ Dataset:
     Representation: 'gray_scale' # mlp_learned, frame, gray_scale, rgb # TODO ablation
     Agumentation: False
 #  Classnames: "/home/jinjing/zhoujiazhou/ExACT_github/Dataset/SeAct/SeAct_ds_cls.json"
-  Classnames: "/home/jinjing/zhoujiazhou/ExACT/Dataloader/SeAct/SeAct_ds_cls.json"
+  Classnames: "/home/jinjing/zhoujiazhou/ExACT_github/Dataloader/SeAct/SeAct_ds_cls.json"
 
 LossFunction:
   loss_sigma_threshold: 15000

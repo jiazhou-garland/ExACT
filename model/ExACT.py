@@ -87,7 +87,7 @@ class ExACT(nn.Module):
 
 # Test code
 if __name__ == '__main__':
-    cfg = read_yaml('/ExACT\Configs/backbone_ddp.yaml')
+    cfg = read_yaml('/ExACT_github\Configs/backbone_ddp.yaml')
     clip_model = load_clip_to_cpu(cfg).float()
     ECLIP = ECLIP(cfg, clip_model, clip_model).float()
     ExACT = ExACT(ECLIP, cfg).float()

@@ -47,7 +47,7 @@ class SeACT(Dataset):
         self.num_events = num_events
         self.median_length = median_length
         self.pad_frame_255 = pad_frame_255
-        tf = open('/home/jinjing/zhoujiazhou/ExACT/Dataloader/DVS_SemanticAction/DVS Semantic Action.json', "r")
+        tf = open('/home/jinjing/zhoujiazhou/ExACT_github/Dataloader/DVS_SemanticAction/DVS Semantic Action.json', "r")
         self.classnames_dict = json.load(tf)  # class name idx start from 0
         self.sample_event_num_min = 100000
         self.sample_event_threshold = 40
@@ -372,22 +372,22 @@ def analysis_dataset(path):
 
 
 if __name__ == '__main__':
-    all_path = r'/home/jinjing/zhoujiazhou/ExACT/Dataloader/DVS_SemanticAction/DVS Semantic Action_whole.txt'
+    all_path = r'/home/jinjing/zhoujiazhou/ExACT_github/Dataloader/DVS_SemanticAction/DVS Semantic Action_whole.txt'
     num_events = 100000 # 1093470 546735 273367 136683 68341
     median_length = 1500000
     frame = 1513
-    tf = open("/home/jinjing/zhoujiazhou/ExACT/Dataloader/DVS_SemanticAction/DVS Semantic Action.json", "r")
+    tf = open("/home/jinjing/zhoujiazhou/ExACT_github/Dataloader/DVS_SemanticAction/DVS Semantic Action.json", "r")
     classnames_dict = json.load(tf)  # class name idx start from 0
     key_list = list(classnames_dict.keys())
     val_list = list(classnames_dict.values())
-    # with open('/home/jinjing/zhoujiazhou/ExACT/Dataloader/DVS_SemanticAction/DVS Semantic Action_ds.json', 'r') as f:
+    # with open('/home/jinjing/zhoujiazhou/ExACT_github/Dataloader/DVS_SemanticAction/DVS Semantic Action_ds.json', 'r') as f:
     #     tf_ds = json.load(f)
     # tf_ds_cls = {}
     # for i in range(len(key_list)):
     #     ds = tf_ds[key_list[i]][0]
     #     key = key_list[i] +": " + ds
     #     tf_ds_cls[key] = val_list[i]
-    # with open("/home/jinjing/zhoujiazhou/ExACT/Dataloader/DVS_SemanticAction/DVS Semantic Action_ds_cls.json", "w") as f:
+    # with open("/home/jinjing/zhoujiazhou/ExACT_github/Dataloader/DVS_SemanticAction/DVS Semantic Action_ds_cls.json", "w") as f:
     #     json.dump(tf_ds_cls, f)
 
     datasets = SeACT(all_path, representation='rgb', median_length = median_length,
