@@ -43,6 +43,7 @@ The following table provides the Download Access to our SeAct dataset, as well a
 
 </div>
 ---
+
 # Model checkpoints
 <div align=center>
 
@@ -55,6 +56,7 @@ The following table provides the Download Access to our SeAct dataset, as well a
 
 </div>
 ---
+
 # Dependencies
 Please refer to [install.md](../ExACT/docs/install.md) for step-by-step guidance on how to install the packages.
 
