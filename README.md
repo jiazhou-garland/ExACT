@@ -9,7 +9,7 @@ This repository contains the official PyTorch implementation of the paper "ExACT
 
 ---
 # Citation
-If you find this paper useful, please consider staring 🌟 this repo and citing 📑 our paper:
+If you find this paper useful, please consider staring 🌟 this repository and citing 📑 our paper:
 ````
 @article{zhou2024exact,
   title={ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More},
