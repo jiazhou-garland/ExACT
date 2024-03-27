@@ -25,12 +25,12 @@ If you find this paper useful, please consider staring 🌟 this repo and citing
 1. Please refer to [install.md](../ExACT/docs/install.md) for step-by-step guidance on how to install the packages.
 2. Download the **ViT-B-16** CLIP pretrained backbone in this [repository](https://github.com/mlfoundations/open_clip).
 3. Download the evaluated dataset and its corresponding model checkpoints in the following **SeAct Dataset** section and **Model Checkpoints** section, respectively.
-Note that the train-val dataset split are provided in ./ExACT/Dataloader folder to ensure the fairness of future comparison.
-4. Preprocessing the datasets in order to transform the raw events into the event frames by our proposed AFE representation.
+Note that the train-val dataset split are provided in **./ExACT/Dataloader** folder to ensure the fairness of future comparison.
+4. Preprocessing the datasets in order to transform the raw events into the event frames by our proposed 🌟AFE representation🌟.
 ````
 python ./ExACT/Dataloader/AFE Preprocessing/dataset_name.py
 ````
-5. Change the **dataset_name.yaml** file in the **Configs** folder, namely modifying path directories **config['MODEL']['Load_Path'],
+5. Change the **dataset_name.yaml** file in the **Configs** folder, namely modifying **config['MODEL']['Load_Path'],
 config['MODEL']['BACKBONE']['PRE_trained_model'], config['Dataset']['Train']['Path'], config['Dataset']['Val']['Path'], and  config['Dataset']['Classnames']**.
 6. Finally, evaluate the ExACT using the following command!
 ````
