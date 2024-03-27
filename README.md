@@ -27,25 +27,36 @@ Each action is accompanied by an action caption of less than 30 words generated 
 We split 80% and 20% of each category for training and testing (validating), respectively.
 
 <div align="center">
-<img src="image/SeACT.png" width="1300px">
+<img src="image/SeACT.png" width="800px">
 </div>
 
 The following table provides the Download Access to our SeAct dataset, as well as PAF, DVS128Gesture and HARDVS datasets utilized for comparision.
 
 <div align=center>
 
-| Event Datasets |                                             Access to Download                                             | 
-|:--------------:|:----------------------------------------------------------------------------------------------------------:|
-|     SeAct      |    [Download](https://drive.google.com/drive/folders/1ud_PwnWULqJ-nH8InSuzTxJXUFgTmJkw?usp=drive_link)     |  
-|      PAF       |                         [Download](https://github.com/CrystalMiaoshu/PAFBenchmark)                         | 
-| DVS128Gesture  | [Download](https://research.ibm.com/publications/a-low-power-fully-event-based-gesture-recognition-system) |
-|     HARDVS     |                              [Download](https://github.com/Event-AHU/HARDVS)                               |
+| Event Datasets |                        Access to Download Datasets                                                                | 
+|:--------------:|:-----------------------------------------------------------------------------------------------------------------:|
+|     SeAct      |        [Download](https://drive.google.com/drive/folders/1ud_PwnWULqJ-nH8InSuzTxJXUFgTmJkw?usp=drive_link)        |  
+|      PAF       |                            [Download](https://github.com/CrystalMiaoshu/PAFBenchmark)                             | 
+| DVS128Gesture  |    [Download](https://research.ibm.com/publications/a-low-power-fully-event-based-gesture-recognition-system)     |
+|     HARDVS     |                                  [Download](https://github.com/Event-AHU/HARDVS)                                  |
 
 </div>
+---
+# Model checkpoints
+<div align=center>
 
+|  Datasets     |                                Access to Download Model checkpoints                                                          | 
+|:-------------:|:----------------------------------------------------------------------------------------------------------------------------:|
+|     SeAct     |    [Download Model checkpoints](https://drive.google.com/drive/folders/1ud_PwnWULqJ-nH8InSuzTxJXUFgTmJkw?usp=drive_link)     |  
+|      PAF      |                         [Download Model checkpoints](https://github.com/CrystalMiaoshu/PAFBenchmark)                         | 
+| DVS128Gesture | [Download Model checkpoints](https://research.ibm.com/publications/a-low-power-fully-event-based-gesture-recognition-system) |
+|    HARDVS     |                              [Download Model checkpoints](https://github.com/Event-AHU/HARDVS)                               |
+
+</div>
 ---
 # Dependencies
-Please refer to [install.md](../ExACT_g/docs/install.md) for step-by-step guidance on how to install the packages.
+Please refer to [install.md](../ExACT/docs/install.md) for step-by-step guidance on how to install the packages.
 
 ---
 # ️ ️Acknowledgement
