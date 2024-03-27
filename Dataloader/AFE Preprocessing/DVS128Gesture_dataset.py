@@ -1,13 +1,8 @@
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
-import struct, random
-import copy, json
+import struct, json
 import numpy as np
-import matplotlib.pyplot as plt
 import cv2,os
-import pickle
-# from spikingjelly.datasets.cifar10_dvs import load_events
-
 class DVS128Gesture(Dataset):
     def __init__(self, txtPath, resize_width=224,
                  resize_height=224, representation=None,
@@ -242,15 +237,6 @@ class DVS128Gesture(Dataset):
         half_frame2 = self.generate_abs_image(events_stream[half_N:, :])
         diff_image = np.abs(half_frame1 - half_frame2)
         idx = 200 * (diff_image.sum() / N)
-        # print(idx)
-        # print(diff_image.sum())
-        # print(half_frame1.sum())
-        # print(half_frame2.sum())
-
-        # plt.figure()
-        # plt.imshow(diff_image)
-        # plt.axis('off')
-        # plt.show()
 
         if idx <= self.sample_event_threshold:
             return True
@@ -267,15 +253,6 @@ class DVS128Gesture(Dataset):
         if img.ndim == 2:
             img = np.array([img, img, img]).transpose(1, 2, 0)  # H,W,3
 
-        # h, w, _ = img.shape
-        # a = self.height - h
-        # b = self.width - w
-        #
-        # if a > 0:
-        #     img = np.pad(img, ((0, a), (0, 0), (0, 0)), "constant", constant_values=255)
-        # if b > 0:
-        #     img = np.pad(img, ((0, 0), (0, b), (0, 0)), "constant", constant_values=255)
-
         h2, w2 = img.shape[0:2]
         scale = self.height * 1.0 / h2
         scale2 = self.width * 1.0 / w2
@@ -283,11 +260,9 @@ class DVS128Gesture(Dataset):
         return img
 
 if __name__ == '__main__':
-    train_path = r"/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/ExACT_original/Dataloader/DVS128Gesture/DVS128Gesture_train.txt"
-    val_path = r"/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/ExACT_original/Dataloader/DVS128Gesture/DVS128Gesture_val.txt"
-
-    tf = open("/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/ExACT_original/Dataloader/DVS128Gesture/DVS128Gesture.json", "r")
-    # tf = open("/zjz/ExACT_original/Dataloader/PAF/PAF.json", "r")
+    train_path = r"Path-to-/DVS128Gesture_train.txt" # TODO: Change to your directory
+    val_path = r"Path-to-/DVS128Gesture_val.txt" # TODO: Change to your directory
+    tf = open("Path-to-/DVS128Gesture.json", "r") # TODO: Change to your directory
     classnames_dict = json.load(tf)  # class name idx start from 0
     classnames_list = [i for i in classnames_dict.keys()]
     # print(classnames_list)
@@ -304,7 +279,7 @@ if __name__ == '__main__':
             for i in range(B):
                 for j in range(T):
                     # TODO train
-                    file_path = event_stream_path[0].replace('DvsGesture', 'DVSGesture_Sampled_val_v3').replace('.aedat', '')
+                    file_path = event_stream_path[0].replace('DvsGesture', 'DVSGesture_Sampled_train').replace('.aedat', '')
                     # TODO val
                     # file_path = event_stream_path[0].replace('DvsGesture', 'DVSGesture_Sampled_val').replace('.aedat','')
 
@@ -322,14 +297,4 @@ if __name__ == '__main__':
                     print(subfile_path)
                     img = events_image_i[i,j,:,:,:]
                     cv2.imwrite(subfile_path, img)
-
-    # events_stream, class_idxs, event_stream_path = next(iter(feeder))
-    # events_image = events_image.numpy().transpose(0,2,3,4,1) # B,T,H,W,C
-    # visualize_grayscale_img(events_image)
-
-
-    # visualize_events_stream(events_stream.squeeze(0))
-    # visualize_events_image(events_stream, frame=frame)
-    # print(events_image.shape)
-    # analysis_dataset(train_path)
 

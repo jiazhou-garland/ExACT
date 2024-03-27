@@ -12,7 +12,7 @@ Trainer:
   seed: 101 # 3407 42 114514
 
 MODEL:
-  Load_Path: "Path-to-DVS128Gesture-[98.96].bin" # TODO Change to your directory
+  Load_Path: "Path-to-DVS128Gesture-[98.96].bin" # TODO: Change to your directory
 #  Load_Path: None
   BACKBONE:
     Name: "ViT-B/16"
@@ -20,7 +20,7 @@ MODEL:
     # CLIP model default is float16
     PRE_ENCODING: "fp16"
     #Download path to PRE_trained_model
-    PRE_trained_model: 'Path-to/pretrained_CLIP/ViT-B-16.pt' # TODO Change to your directory
+    PRE_trained_model: 'Path-to/pretrained_CLIP/ViT-B-16.pt' # TODO:Change to your directory
   EventEncoder:
     train_clip_backbone: True
     # feature output from the No.3 ViT block, -1 denotes output whithout the low-level ferature
@@ -44,16 +44,16 @@ MODEL:
 Dataset:
   Input_size: [224,224]
   Train:
-    Path: "Path-to-/DVS128Gesture_sampled_train.txt" # TODO Change to your directory
+    Path: "Path-to-/DVS128Gesture_sampled_train.txt" # TODO: Change to your directory
     Batch_size: 12
     Representation: 'gray_scale' # mlp_learned, frame, gray_scale, rgb
     Agumentation: False
   Val:
-    Path: "Path-to-/DVS128Gesture_sampled_val.txt" # TODO Change to your directory
+    Path: "Path-to-/DVS128Gesture_sampled_val.txt" # TODO: Change to your directory
     Batch_size: 1
     Representation: 'gray_scale' # mlp_learned, frame, gray_scale, rgb
     Agumentation: False
-  Classnames: "Path-to-/DVS128Gesture.json" # TODO Change to your directory
+  Classnames: "Path-to-/DVS128Gesture.json" # TODO: Change to your directory
 
 LossFunction:
   loss_sigma_threshold: 15000

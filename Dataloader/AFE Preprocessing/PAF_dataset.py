@@ -7,18 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2,os
 import pickle
-# from spikingjelly.datasets.cifar10_dvs import load_events
 
-def random_shift_events(events, max_shift=20, resolution=(180, 240)):
-    H, W = resolution
-    x_shift, y_shift = np.random.randint(-max_shift, max_shift + 1, size=(2,))
-    events[:, 0] += x_shift
-    events[:, 1] += y_shift
-
-    valid_events = (events[:, 0] >= 0) & (events[:, 0] < W) & (events[:, 1] >= 0) & (events[:, 1] < H)
-    events = events[valid_events]
-
-    return events
 
 def random_flip_events_along_x(events, resolution=(180, 240), p=0.5):
     H, W = resolution
@@ -28,13 +17,6 @@ def random_flip_events_along_x(events, resolution=(180, 240), p=0.5):
         flag = 1
     return events, flag
 
-def random_flip_events_along_y(events, resolution=(180, 240), p=0.5):
-    H, W = resolution
-    flag = 0
-    if np.random.random() < p:
-        events[:, 1] = H - 1 - events[:, 1]
-        flag = 1
-    return events, flag
 
 class PAF(Dataset):
     def __init__(self, txtPath, num_events=100000, median_length=100000,
@@ -52,8 +34,6 @@ class PAF(Dataset):
         self.num_events = num_events
         self.median_length = median_length
         self.pad_frame_255 = pad_frame_255
-        tf = open('/home/jinjing/zhoujiazhou/HumanECLIP/Dataloader/PAF/PAF.json', "r")
-        self.classnames_dict = json.load(tf)  # class name idx start from 0
         self.sample_event_num_min = 100000
         self.sample_event_threshold = 50
     def __len__(self):
@@ -76,64 +56,9 @@ class PAF(Dataset):
         ts, x, y, pol = self.getDVSeventsDavis(event_stream_path)
         events_stream = np.array([x,y,ts,pol]).transpose()
 
-        if self.augmentation:
-            events_stream = random_flip_events_along_x(events_stream, (self.height, self.width))
-
-        # real_n, _  = events_stream.shape
-        # real_num_frame = int(real_n / self.num_events)
-        # events_stream, pad_flag = self.pad_event_stream(events_stream, median_length=self.median_length)
-        # N, _ = events_stream.shape
-        # num_frame = int(np.floor( N / self.num_events))
-        # # print(num_frame)
-        # all_frame = []
-        # for i in range(num_frame):
-        #     # if pad_flag and i > real_num_frame and self.pad_frame_255:
-        #     #     all_frame.append(255*np.ones((self.height, self.width, 3), dtype=np.float))
-        #     # else:
-        #     events_tmp = events_stream[i * self.num_events: (i + 1) * self.num_events, :]
-        #     events_image = self.generate_event_image(events_tmp, (self.height, self.width), self.representation)
-        #     events_image = cv2.flip(events_image, 0)
-        #     all_frame.append(events_image)
-        #
-        #     N, _ = events_tmp.shape
-        #     # print(N)
-        #     half_N = int(np.floor(N / 2))
-        #     # print(half_N)
-        #     half_frame1 = self.generate_event_image(events_tmp[:half_N,:], (self.height, self.width), self.representation)
-        #     half_frame1 = cv2.flip(half_frame1, 0)
-        #     half_frame1_clip = 1000*np.clip(half_frame1,0,0.001)
-        #     # print(half_frame1.sum())
-        #     half_frame2 = self.generate_event_image(events_tmp[half_N:,:], (self.height, self.width), self.representation)
-        #     half_frame2 = cv2.flip(half_frame2, 0)
-        #     half_frame2_clip = 1000*np.clip(half_frame2,0,0.001)
-        #     # print(half_frame2.sum())
-        #
-        #     # kernel_dilate = np.ones((3, 3), np.uint8)
-        #     # kernel_erode = np.ones((3, 3), np.uint8)
-        #     # half_frame1 = cv2.erode(half_frame1, kernel_erode, iterations=3)
-        #     # half_frame1 = cv2.dilate(half_frame1, kernel_dilate, iterations=3)
-        #     # half_frame2 = cv2.erode(half_frame2, kernel_erode, iterations=3)
-        #     # half_frame2 = cv2.dilate(half_frame2, kernel_dilate, iterations=3)
-        #     # print(half_frame1_clip.sum())
-        #     # print(half_frame2_clip.sum())
-        #     diff_image = np.abs(half_frame1_clip - half_frame2_clip)
-        #     # print(1000*np.clip(half_frame2,0,0.001))
-        #     # print(np.abs(diff_image).sum())
-        #     print(200 *(np.abs(diff_image).sum() / (half_frame1_clip.sum()+half_frame2_clip.sum())))
-        #     # all_frame.append(half_frame1)
-        #     # all_frame.append(half_frame2)
-        #     all_frame.append(diff_image)
-        #
-        # events_data = np.array(all_frame).transpose(3, 0, 1, 2)
-
         all_frame = self.adaptive_event_sampling(events_stream)
         all_frame = np.array(all_frame)
-        # print(all_frame.shape)
         events_data = all_frame.transpose(3, 0, 1, 2)  # T,H,W,3 -> 3,T,H,W
-
-        # elif self.representation == 'mlp_learned':
-        #     events_data,_ = self.pad_event_stream(events_stream)
-        #     # print(events_data)
 
         return events_data, label_idx, event_stream_path
 
@@ -262,18 +187,8 @@ class PAF(Dataset):
         img_pos = img_pos.reshape((h_event, w_event,1))
         img_neg = img_neg.reshape((h_event, w_event,1))
 
-        # denoising using morphological transformation
-        # kernel_dilate = np.ones((2,2), np.uint8)
-        # kernel_erode = np.ones((2,2), np.uint8)
-        # img_pos = cv2.erode(img_pos, kernel_erode, iterations=1)
-        # img_neg = cv2.erode(img_neg, kernel_erode, iterations=1)
-        # img_pos = cv2.dilate(img_pos, kernel_dilate, iterations=1)
-        # img_neg = cv2.dilate(img_neg, kernel_dilate, iterations=1)
-
         img_pos = img_pos.reshape((h_event, w_event,1))
         img_neg = img_neg.reshape((h_event, w_event,1))
-        # img_pos = img_pos / (np.max(img_pos) + 1e-12)
-        # img_neg = img_neg / (np.max(img_neg) + 1e-12)
 
         if representation == 'rgb':
             # event_frame = (img_pos * [0, 0, 255] + img_neg * [255,0,0])
@@ -356,15 +271,6 @@ class PAF(Dataset):
         half_frame2 = self.generate_abs_image(events_stream[half_N:, :])
         diff_image = np.abs(half_frame1 - half_frame2)
         idx = 200 * (diff_image.sum() / N)
-        # print(idx)
-        # print(diff_image.sum())
-        # print(half_frame1.sum())
-        # print(half_frame2.sum())
-
-        # plt.figure()
-        # plt.imshow(diff_image)
-        # plt.axis('off')
-        # plt.show()
 
         if idx <= self.sample_event_threshold:
             return True
@@ -381,129 +287,20 @@ class PAF(Dataset):
         if img.ndim == 2:
             img = np.array([img, img, img]).transpose(1, 2, 0)  # H,W,3
 
-        # h, w, _ = img.shape
-        # a = self.height - h
-        # b = self.width - w
-        #
-        # if a > 0:
-        #     img = np.pad(img, ((0, a), (0, 0), (0, 0)), "constant", constant_values=255)
-        # if b > 0:
-        #     img = np.pad(img, ((0, 0), (0, b), (0, 0)), "constant", constant_values=255)
-
         h2, w2 = img.shape[0:2]
         scale = self.height * 1.0 / h2
         scale2 = self.width * 1.0 / w2
         img = cv2.resize(img, dsize=None, fx=scale2, fy=scale)
         return img
 
-def visualize_events_stream(events):
-    p = copy.deepcopy(events[:, 3])
-    events_neg = events[p == 0, :]
-    events_pos = events[p == 1, :]
-
-    # Creating figures for the plot
-    # fig = plt.figure(figsize=(15, 15))
-    ax = plt.axes(projection="3d")
-    # Creating a plot using the random datasets
-    ax.scatter3D(events_pos[:, 0], events_pos[:, 1], events_pos[:, 2], color="red", marker='')
-    ax.scatter3D(events_neg[:, 0], events_neg[:, 1], events_neg[:, 2], color="blue", marker='')
-    ax.set_xlabel('X-axis', fontweight='bold')
-    ax.set_ylabel('Y-axis', fontweight='bold')
-    ax.set_zlabel('T-axis', fontweight='bold')
-    plt.title("Event stream plot")
-    # display the plot
-    plt.show()
-
-def visualize_events_image(events, frame):
-    """Visualizes the input histogram
-    events:[Batch, N, 4]
-    """
-    events = events[0, :, :]
-    x, y, t, p = events.T
-    N, _ = events.shape
-    time_window = int(N / frame)
-    for i in range(frame):
-        x_ = x[i * time_window: (i + 1) * time_window]
-        y_ = y[i * time_window: (i + 1) * time_window]
-        p_ = p[i * time_window: (i + 1) * time_window]
-
-        plt.figure()
-        plt.scatter(x_[p_ == 1], y_[p_ == 1], color="red", marker='.')
-
-        plt.scatter(x_[p_ == 0], y_[p_ == 0], color="blue", marker='.')
-        plt.axis('off')
-        plt.show()
-
-def visualize_whole_data_stream(event_count, image, label, frame):
-    B = event_count.shape[0]
-    plt_num = int((frame + 1) / 3 + 1)
-    for j in range(B):
-        plt.figure()
-        for i in range(frame):
-            histogram = event_count[j, i, :, :, :]
-            height, width, _ = histogram.shape
-            np_image = np.zeros([height, width, 3])
-
-            # H,W,1 * 1,1,3 ->H,W,3
-            # histogram[:, :, 1]->pos red->np.array([1, 0, 0]
-            np_image += (histogram[:, :, 1])[:, :, None] * np.array([1, 0, 0])[None, None, :]
-            # H,W,1 * 1,1,3 ->H,W,3
-            # histogram[:, :, 0]->neg blue->np.array([0, 0, 1]
-            np_image += (histogram[:, :, 0])[:, :, None] * np.array([0, 0.5, 0.4])[None, None, :]
-            np_image = np_image.clip(0, 1)
-            # np_image[np.where(np_image == 0)] = 1
-
-            plt.subplot(3, plt_num, i + 1)
-            plt.imshow(np_image.astype(np.float64))
-            plt.title('frame: ' + str(i + 1))
-            plt.axis('off')
-
-        plt.subplot(3, plt_num, frame + 1)
-        plt.imshow(image[j, :, :, :])
-        plt.axis('off')
-        plt.title(label[j])
-        plt.show()
-
-def visualize_grayscale_img(grayscale_img):
-    # print(image.shape)
-    B,T,H,W,C = grayscale_img.shape
-    plt_num = int((T + 1) / 3 + 1)
-    for j in range(B):
-        plt.figure()
-        for i in range(T):
-            img = grayscale_img[j, i, :, :, :]
-            plt.subplot(3, plt_num, i + 1)
-            plt.imshow(img)
-            plt.axis('off')
-
-        plt.show()
-
-def analysis_dataset(path):
-    length_t = []
-    with open(path, 'r') as f:
-        for line in f.readlines():
-            # event
-            event_stream_path, image_path = line.split('\t')
-            raw_data = np.fromfile(open(event_stream_path, 'rb'), dtype=np.uint8)
-            raw_data = np.int32(raw_data)
-            # all_y = raw_data[1::5]
-            # all_x = raw_data[0::5]
-            # all_p = (raw_data[2::5] & 128) >> 7  # bit 7
-            all_ts = ((raw_data[2::5] & 127) << 16) | (raw_data[3::5] << 8) | (raw_data[4::5])
-            length_t.append(len(all_ts))
-    length_t = np.array(length_t)
-    print('max: ' + str(length_t.max()) + ' min: ' + str(length_t.min()))
 
 
 if __name__ == '__main__':
-    train_path = r"/zjz/HumanECLIP/Dataloader/PAF/PAF_train.txt"
-    # all_path = r'/zjz/HumanECLIP/Dataloader/PAF/PAF_whole.txt'
-    all_path = r'/home/jinjing/zhoujiazhou/HumanECLIP/Dataloader/PAF/PAF_whole_45.txt'
+    all_path = r'Path-to-/PAF_whole.txt' # TODO: Change to your directory
     num_events = 80000 # 1093470 546735 273367 136683 68341
     median_length = 1500000
     frame = 1513
-    tf = open("/home/jinjing/zhoujiazhou/HumanECLIP/Dataloader/PAF/PAF.json", "r")
-    # tf = open("/zjz/HumanECLIP/Dataloader/PAF/PAF.json", "r")
+    tf = open("Path-to-/PAF.json", "r")
     classnames_dict = json.load(tf)  # class name idx start from 0
     classnames_list = [i for i in classnames_dict.keys()]
     datasets = PAF(all_path, representation='rgb', median_length = median_length,
@@ -515,7 +312,7 @@ if __name__ == '__main__':
         B, T, H, W, C = events_image.shape
         for i in range(B):
             for j in range(T):
-                file_path = event_stream_path[0].replace('PAF', 'PAF_RGB_Sampled_w.o_denoise').replace('.aedat', '')
+                file_path = event_stream_path[0].replace('PAF', 'PAF_RGB_Sampled').replace('.aedat', '')
                 folder_path = '/'.join([file_path.split('/')[i] for i in range(7)])
                 # print(file_path)
                 if not os.path.exists(folder_path):
@@ -528,14 +325,4 @@ if __name__ == '__main__':
                 print(file_path)
                 img = events_image[i,j,:,:,:]
                 cv2.imwrite(file_path, img)
-
-    # events_stream, class_idxs, event_stream_path = next(iter(feeder))
-    # events_image = events_image.numpy().transpose(0,2,3,4,1) # B,T,H,W,C
-    # visualize_grayscale_img(events_image)
-
-
-    # visualize_events_stream(events_stream.squeeze(0))
-    # visualize_events_image(events_stream, frame=frame)
-    # print(events_image.shape)
-    # analysis_dataset(train_path)
 
