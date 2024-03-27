@@ -18,6 +18,7 @@ If you find this paper useful, please consider staring 🌟 this repo and citing
 |  N-Caltech101  |       [Download](https://drive.google.com/drive/folders/1sY91hL_iHnmfRXSTc058bfZ0GQcEC6St)       |          Caltech101          |    [download](https://data.caltech.edu/records/mzrjq-6wc02)    |
 |   N-Imagenet   | [Download](https://docs.google.com/document/d/1x0Vqe_5tVAJtYLYSZLwN6oNMExyUjIh-a30oLOKV2rE/edit) |           Imagenet           | [download](https://image-net.org/download.php)|
 |    N-MINIST    | [Download](https://www.garrickorchard.com/datasets/n-mnist) |            MINIST            | [download](https://link.zhihu.com/?target=http%3A//yann.lecun.com/exdb/mnist/)|
+|    N-MINIST    | [Download](https://www.garrickorchard.com/datasets/n-mnist) |            MINIST            | [download](https://link.zhihu.com/?target=http%3A//yann.lecun.com/exdb/mnist/)|
 </div>
 
 ---
