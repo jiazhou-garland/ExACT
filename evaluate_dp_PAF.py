@@ -74,7 +74,8 @@ def evaluate_one_epoch(model, cfg, dataloader):
 
 if __name__ == '__main__':
     # ---------------------------------------------------init----------------------------------------------------------------
-    cfg = read_yaml('/home/jinjing/zhoujiazhou/ExACT_github/Configs/PAF.yaml')
+    THIS_DIR = abspath(dirname(__file__))
+    cfg = read_yaml(THIS_DIR + '/Configs/PAF.yaml')
     seed_torch(cfg['Trainer']['seed'])
 
     # -----------------------------------------------dataset----------------------------------------------------------------
