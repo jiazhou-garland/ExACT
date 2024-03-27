@@ -2,7 +2,7 @@
 
 This repository contains the official PyTorch implementation of the paper "[ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More](https://vlislab22.github.io/ExACT/)".
 <div align="center">
-<img src="image/Framework.png" width="1300px">
+<img src="image/image/Framework.png" width="1300px">
 </div>
 
 ---
@@ -24,7 +24,7 @@ If you find this paper useful, please consider staring 🌟 this repo and citing
 
 ---
 # Dependencies
-Please refer to [install.md](./docs/install.md) for step-by-step guidance on how to install the packages.
+Please refer to [install.md](../ExACT_g/docs/install.md) for step-by-step guidance on how to install the packages.
 
 ---
 # ️ ️Acknowledgement
@@ -32,7 +32,7 @@ We thank the authors of [CLIP](https://github.com/openai/CLIP), [CoOp](https://g
 
 ---
 # License
-This repository is released under the [MIT](./LICENSE) License.
+This repository is released under the [MIT](LICENSE) License.
 
 ---
 # Contact

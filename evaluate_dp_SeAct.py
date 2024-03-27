@@ -120,10 +120,10 @@ if __name__ == '__main__':
     ExACT = nn.DataParallel(ExACT, device_ids=gpus, output_device=gpus[0])
     if cfg['MODEL']['Load_Path'] != None:
         ExACT.load_state_dict(torch.load(cfg['MODEL']['Load_Path'],map_location=torch.device('cpu')))
-    #  for name, param in ExACT_github.named_parameters():
+    #  for name, param in ExACT_original.named_parameters():
     #     if param.requires_grad == True:
     #         print('Trainable layers includes: ' + name)
-    # print(ExACT_github)
+    # print(ExACT_original)
 
     # ----------------------------------------------val----------------------------------------------------------------
     # torch.autograd.set_detect_anomaly(True)
