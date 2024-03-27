@@ -12,7 +12,7 @@ Trainer:
   seed: 101 # 3407 42 114514
 
 MODEL:
-  Load_Path: "/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Result/test-w/DVS128Gesture/[98.96]-DVS128Gesture.bin"
+  Load_Path: "/hpc2hdd/home/jiazhouzhou/jiazhouzhou/code/HumanECLIP/Result/test-w/DVS128Gesture/DVS128Gesture-[98.96].bin"
 #  Load_Path: None
   BACKBONE:
     Name: "ViT-B/16"
