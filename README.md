@@ -2,24 +2,30 @@
 
 This repository contains the official PyTorch implementation of the paper "[ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More](https://vlislab22.github.io/ExACT/)".
 <div align="center">
-<img src="image/image/Framework.png" width="1300px">
+<img src="image/Framework.png" width="1300px">
 </div>
 
 ---
 # Citation
 If you find this paper useful, please consider staring 🌟 this repo and citing 📑 our paper:
 
+@article{zhou2024exact,
+  title={ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More},
+  author={Zhou, Jiazhou and Zheng, Xu and Lyu, Yuanhuiyi and Wang, Lin},
+  journal={arXiv preprint arXiv:2403.12534},
+  year={2024}
+}
 ---
 # Dataset
 <div align=center>
 
-| Event Datasets |                                        Acesse to Download                                        | Corresponding Image Datasets | Acesse to Download |
-|:--------------:|:------------------------------------------------------------------------------------------------:|:----------------------------:|:------------------:|
-|  N-Caltech101  |       [Download](https://drive.google.com/drive/folders/1sY91hL_iHnmfRXSTc058bfZ0GQcEC6St)       |          Caltech101          |    [download](https://data.caltech.edu/records/mzrjq-6wc02)    |
-|   N-Imagenet   | [Download](https://docs.google.com/document/d/1x0Vqe_5tVAJtYLYSZLwN6oNMExyUjIh-a30oLOKV2rE/edit) |           Imagenet           | [download](https://image-net.org/download.php)|
-|    N-MINIST    | [Download](https://www.garrickorchard.com/datasets/n-mnist) |            MINIST            | [download](https://link.zhihu.com/?target=http%3A//yann.lecun.com/exdb/mnist/)|
-|    N-MINIST    | [Download](https://www.garrickorchard.com/datasets/n-mnist) |            MINIST            | [download](https://link.zhihu.com/?target=http%3A//yann.lecun.com/exdb/mnist/)|
-|    N-MINIST    | [Download](https://www.garrickorchard.com/datasets/n-mnist) |            MINIST            | [download](https://link.zhihu.com/?target=http%3A//yann.lecun.com/exdb/mnist/)|
+| Event Datasets |                                                                Acesse to Download                                                                 | 
+|:--------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------:|
+|     SeAct      |                        [Download](https://drive.google.com/drive/folders/1ud_PwnWULqJ-nH8InSuzTxJXUFgTmJkw?usp=drive_link)                        |  
+|      PAF       |                                            [Download](https://github.com/CrystalMiaoshu/PAFBenchmark)                                             | 
+| DVS128Gesture  |                   [Download](https://research.ibm.com/publications/a-low-power-fully-event-based-gesture-recognition-system)                      |
+|     HARDVS     |                                                  [Download](https://github.com/Event-AHU/HARDVS)                                                  |
+
 </div>
 
 ---
