@@ -27,7 +27,7 @@ Each action is accompanied by an action caption of less than 30 words generated 
 We split 80% and 20% of each category for training and testing (validating), respectively.
 
 <div align="center">
-<img src="image/SeACT.png" width="800px">
+<img src="image/SeACT.png" width="500px">
 </div>
 
 The following table provides the Download Access to our SeAct dataset, as well as PAF, DVS128Gesture and HARDVS datasets utilized for comparision.
