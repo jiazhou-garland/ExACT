@@ -22,7 +22,7 @@ If you find this paper useful, please consider staring 🌟 this repository and 
 ---
 # Quick Start
 
-1. Please refer to [install.md](./docs/install.md) for step-by-step guidance on how to install the packages.
+1. Refer to [install.md](./docs/install.md) for step-by-step guidance on how to install the packages.
 2. Download the **ViT-B-16** CLIP pretrained backbone in this [repository](https://github.com/mlfoundations/open_clip).
 3. Download the evaluated dataset and its corresponding model checkpoints in the following **SeAct Dataset** section and **Model Checkpoints** section, respectively.
 Note that the train-val dataset split are provided in **./ExACT/Dataloader** folder to ensure the fairness of future comparison.
