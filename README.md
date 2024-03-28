@@ -26,7 +26,7 @@ If you find this paper useful, please consider staring 🌟 this repository and 
 2. Download the **ViT-B-16** CLIP pretrained backbone in this [repository](https://github.com/mlfoundations/open_clip).
 3. Download the evaluated dataset and its corresponding model checkpoints in the following **SeAct Dataset** section and **Model Checkpoints** section, respectively.
 Note that the train-val dataset split are provided in **./ExACT/Dataloader** folder to ensure the fairness of future comparison.
-4. Preprocessing the datasets in order to transform the raw events into the event frames by our proposed 🌟AFE representation🌟. 
+4. Preprocess the datasets in order to transform the raw events into the event frames by our proposed 🌟AFE representation🌟. 
 Also remember to change your dataset directory path in **dataset_name.py**.
 
 ````
