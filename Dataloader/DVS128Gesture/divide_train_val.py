@@ -40,9 +40,8 @@ def write_sampled_file(path, events):
 
 def train_val_divide(train_csv, val_csv, event_path_dataset):
     """
-    divide the train ana validation data,
+    divide the train and validation data,
     """
-    print('开始划分训练集与验证集')
     events, train_e, val_e, class_dic = [], [], [], {}
 
     with open(train_csv, 'r') as file:
@@ -59,14 +58,12 @@ def train_val_divide(train_csv, val_csv, event_path_dataset):
             print(event_str)
             val_e.append(event_str)
 
-    print("训练集与验证集划分结束")
     return train_e, val_e
 
 def list_collection(event_path_dataset):
     """
-    divide the train ana validation data,
+    divide the train and validation data,
     """
-    print('开始划分训练集与验证集')
     events = []
 
     for cat_id, cat in enumerate(tqdm(os.listdir(event_path_dataset))):
