@@ -75,7 +75,7 @@ The following table provides the Download Access to our SeAct dataset, as well a
 |:-------------:|:---------------------------------------------------------------------------------------------------------------------:|
 |     SeAct     | [Download Model checkpoints](https://drive.google.com/file/d/1REmUPrCvKt7gaC81NT7Qv1SGtdN5dNAr/view?usp=sharing) |  
 |      PAF      |  [Download Model checkpoints](https://drive.google.com/file/d/1VfvpqMEyj3oubFBPIAkOG2XlSF298Etu/view?usp=sharing)  | 
-| DVS128Gesture |  [Download Model checkpoints](https://drive.google.com/file/d/1yd5EViMTvVuTyScniluILj5F1vpH7XGA/view?usp=sharing)  |
+| DVS128Gesture |  [Download Model checkpoints](https://drive.google.com/file/d/1Kpk-6fR-4-E3Mrwn5DeN1NHerQfYsvx6/view?usp=sharing)  |
 |    HARDVS     |  [Download Model checkpoints](https://drive.google.com/file/d/1yd5EViMTvVuTyScniluILj5F1vpH7XGA/view?usp=sharing)  |
 
 </div>
