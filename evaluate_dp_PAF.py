@@ -12,10 +12,8 @@ import torch.nn as nn
 def evaluate_one_epoch(model, cfg, dataloader):
     classnames_num = 10
     classnames_idxs = torch.from_numpy(np.arange(0, classnames_num))
-    total, hit1_ev, hit5_ev, hit1_ev_ori, hit5_ev_ori = 0, 0, 0, 0, 0
+    total, hit1_ev = 0, 0
     model = model.eval().float()
-    all_logits_te_e, all_logits_te_e_ori = [], []
-    all_label = []
 #------------------------------------------------------ev -> text----------------------------------------------
     for events, actual_event_length, labels in dataloader:
         # data, labels, = data.cuda(), labels.cuda()
@@ -23,53 +21,32 @@ def evaluate_one_epoch(model, cfg, dataloader):
             events = torch.from_numpy(events).float()
             # labels = torch.from_numpy(labels)
         with torch.no_grad():
-            ev_embeds_, txt_embeds_, ev_f, txt_f, logit_scale = model(events, actual_event_length, classnames_idxs)
+            ev_embeds_, txt_embeds_, _, _, logit_scale = model(events, actual_event_length, classnames_idxs)
             if logit_scale.ndim != 0:
                 logit_scale = logit_scale[0]
             logits = logit_scale * ev_embeds_ @ txt_embeds_.t()
             scores_ev = logits.softmax(dim=-1) # b,n
-            logits_ori = logit_scale * ev_f @ txt_f.t()
-            scores_ev_ori = logits_ori.softmax(dim=-1) # b,n
 
         B, _ = scores_ev.size()
         for i in range(B):
             total += 1
             scores_ev_i = scores_ev[i]
             label_i = labels[i]
-            all_label.append(label_i)
 
             if classnames_idxs[scores_ev_i.topk(1)[1].cpu().detach().numpy()[0]] == label_i:
                 hit1_ev += 1
-            score_list = list(scores_ev_i.topk(5)[1].cpu().detach().numpy())
-            if int(label_i) in set([classnames_idxs[int(score_list[i])] for i in range(len(score_list))]):
-                hit5_ev += 1
 
             acc1_ev = hit1_ev / total * 100.
-            acc5_ev = hit5_ev / total * 100.
-
-            scores_ev_ori_i = scores_ev_ori[i]
-            if classnames_idxs[scores_ev_ori_i.topk(1)[1].cpu().detach().numpy()[0]] == label_i:
-                hit1_ev_ori += 1
-            score_list_ori = list(scores_ev_ori_i.topk(5)[1].cpu().detach().numpy())
-            if int(label_i) in set([classnames_idxs[int(score_list_ori[i])] for i in range(len(score_list_ori))]):
-                hit5_ev_ori += 1
-
-            acc1_ev_ori = hit1_ev_ori / total * 100.
-            acc5_ev_ori = hit5_ev_ori / total * 100.
 
             if total % cfg['Trainer']['print_freq'] == 0:
                 print(f'[Evaluation] num_samples: {total}  '
                       f'cumulative_acc1_ev: {acc1_ev:.2f}%  '
-                      f'cumulative_acc5_ev: {acc5_ev:.2f}%  '
-                      f'cumulative_acc1_ev_ori: {acc1_ev_ori:.2f}%  '
-                      f'cumulative_acc5_ev_ori: {acc5_ev_ori:.2f}%  '
                       )
-    print(f'Accuracy on validation set: ev_top1={acc1_ev:.2f}%, ev_top5={acc5_ev:.2f}% '
-          f'ev_ori_top1={acc1_ev_ori:.2f}%, ev_ori_top5={acc5_ev_ori:.2f}%')
+    print(f'Accuracy on validation set: ev_top1={acc1_ev:.2f}%.')
 
 #     torch.cuda.empty_cache()
 #     gc.collect()
-    return acc1_ev, acc5_ev, acc1_ev_ori, acc5_ev_ori
+    return acc1_ev
 
 
 if __name__ == '__main__':
@@ -122,5 +99,5 @@ if __name__ == '__main__':
     num_epochs = cfg['Trainer']['epoch']
     logit_scale = clip_model_im.logit_scale.exp()
 
-    acc1_ev, acc5_ev, acc1_ev_ori, acc5_ev_ori = evaluate_one_epoch(ExACT, cfg, val_loader)
+    acc1_ev = evaluate_one_epoch(ExACT, cfg, val_loader)
 
