@@ -81,7 +81,7 @@ The following table provides the Download Access to our SeAct dataset, as well a
 </div>
 
 ---
-# ️ ️Acknowledgemen
+# ️ ️Acknowledgement
 We thank the authors of [EventBind](https://github.com/jiazhou-garland/EventBind), [MAP](https://github.com/IIGROUP/MAP) for opening source their wonderful works.
 
 ---
