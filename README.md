@@ -1,7 +1,8 @@
 # [🌟CVPR2024 Highlight🌟]ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More
 
 This repository contains the official PyTorch implementation of the paper "ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More".
-| [Page](https://vlislab22.github.io/ExACT/) | [Paper](https://arxiv.org/abs/2403.12534)
+
+[Project Page](https://vlislab22.github.io/ExACT/) | [Paper](https://openaccess.thecvf.com/content/CVPR2024/html/Zhou_ExACT_Language-guided_Conceptual_Reasoning_and_Uncertainty_Estimation_for_Event-based_Action_CVPR_2024_paper.html)
 
 <div align="center">
 <img src="image/Framework.png" width="1300px">
