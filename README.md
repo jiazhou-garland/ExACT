@@ -11,10 +11,11 @@ This repository contains the official PyTorch implementation of the paper "ExACT
 # Citation
 If you find this paper useful, please consider staring 🌟 this repository and citing 📑 our paper:
 ````
-@article{zhou2024exact,
+@inproceedings{zhou2024exact,
   title={ExACT: Language-guided Conceptual Reasoning and Uncertainty Estimation for Event-based Action Recognition and More},
   author={Zhou, Jiazhou and Zheng, Xu and Lyu, Yuanhuiyi and Wang, Lin},
-  journal={arXiv preprint arXiv:2403.12534},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={18633--18643},
   year={2024}
 }
 ````
@@ -81,7 +82,7 @@ The following table provides the Download Access to our SeAct dataset, as well a
 </div>
 
 ---
-# ️ ️Acknowledgemen
+# ️ ️Acknowledgement
 We thank the authors of [EventBind](https://github.com/jiazhou-garland/EventBind), [MAP](https://github.com/IIGROUP/MAP) for opening source their wonderful works.
 
 ---
