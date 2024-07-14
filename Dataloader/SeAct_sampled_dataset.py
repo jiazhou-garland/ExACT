@@ -92,7 +92,7 @@ if __name__ == '__main__':
     tf = open("/ExACT_github/Dataloader/PAF/PAF.json", "r")
     classnames_dict = json.load(tf)  # class name idx start from 0
     classnames_list = [i for i in classnames_dict.keys()]
-    datasets = DVS_SA_sampled(train_path)
+    datasets = SeAct_sampled(train_path)
     feeder = DataLoader(datasets, batch_size=2, shuffle=True,
                         collate_fn=event_sampled_frames_collate_func)
     padded_events, actual_event_length, labels = next(iter(feeder))
