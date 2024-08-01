@@ -57,7 +57,7 @@ We split 80% and 20% of each category for training and testing (validating), res
 </div>
 
 The following table provides the Download Access to our SeAct dataset, as well as PAF, DVS128Gesture and HARDVS datasets utilized for comparision.
-
+Please refer to the .txt files in the [Dataloader](./Dataloader) folder for the dataset structure.
 <div align=center>
 
 | Event Datasets |                        Access to Download Datasets                                                                | 
