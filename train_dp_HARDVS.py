@@ -339,7 +339,7 @@ if __name__ == '__main__':
                    'acc_retrival_10_e_ori': acc_retrival_10_e_ori,
                    "LR": lr_sched.get_last_lr()[0]})
 
-    ExACT_original, cfg = train_Conceptualizing_Alignment(ExACT, cfg)
+    ExACT, cfg = train_Conceptualizing_Alignment(ExACT, cfg)
     best_acc1_ev, best_acc5_ev = -np.inf, -np.inf
     for epoch in range(1, num_epochs + 1):
         epoch_loss = train_one_epoch(ExACT_original, cfg, loss_scaler, optimizer, lr_sched, train_loader, epoch)
