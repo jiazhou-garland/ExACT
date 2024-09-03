@@ -342,7 +342,7 @@ if __name__ == '__main__':
     ExACT, cfg = train_Conceptualizing_Alignment(ExACT, cfg)
     best_acc1_ev, best_acc5_ev = -np.inf, -np.inf
     for epoch in range(1, num_epochs + 1):
-        epoch_loss = train_one_epoch(ExACT_original, cfg, loss_scaler, optimizer, lr_sched, train_loader, epoch)
+        epoch_loss = train_one_epoch(ExACT, cfg, loss_scaler, optimizer, lr_sched, train_loader, epoch)
 
         wandb.log({"train_epoch_total_loss": epoch_loss[0],
                    "loss_cross_entroy": epoch_loss[1],
@@ -354,7 +354,7 @@ if __name__ == '__main__':
         acc1_ev, acc5_ev, acc1_ev_ori, acc5_ev_ori, \
             acc_retrival_1_e, acc_retrival_5_e, acc_retrival_10_e, \
             acc_retrival_1_e_ori, acc_retrival_5_e_ori, acc_retrival_10_e_ori \
-            = evaluate_one_epoch(ExACT_original, cfg, val_loader, classnames_num, logit_scale, False)
+            = evaluate_one_epoch(ExACT, cfg, val_loader, classnames_num, logit_scale, False)
 
         # Log the metrics
         wandb.log({"acc1_ev": acc1_ev, "acc5_ev": acc5_ev,
