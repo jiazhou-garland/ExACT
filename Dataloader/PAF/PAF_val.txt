@@ -1,58 +1,58 @@
-G:\Dataset\PAF\arm crossing\houjing_1.2.aedat
-G:\Dataset\PAF\arm crossing\liuxingbo_1.1.aedat
-G:\Dataset\PAF\arm crossing\miaoshu_1.3.aedat
-G:\Dataset\PAF\arm crossing\tanglixuan_1.2.aedat
-G:\Dataset\PAF\arm crossing\zhangliming_1.1.aedat
-G:\Dataset\PAF\arm crossing\ziyang_1.3.aedat
-G:\Dataset\PAF\get up\houjing_2.2.aedat
-G:\Dataset\PAF\get up\liuxingbo_2.1.aedat
-G:\Dataset\PAF\get up\miaoshu_2.3.aedat
-G:\Dataset\PAF\get up\tanglixuan_2.2.aedat
-G:\Dataset\PAF\get up\zhangliming_2.1.aedat
-G:\Dataset\PAF\get up\ziyang_2.3.aedat
-G:\Dataset\PAF\jumping\houjing_5.2.aedat
-G:\Dataset\PAF\jumping\liuxingbo_5.1.aedat
-G:\Dataset\PAF\jumping\tanglixuan_5.3.aedat
-G:\Dataset\PAF\jumping\zhangliming_5.2.aedat
-G:\Dataset\PAF\kicking\chenjieneng_3.1.aedat
-G:\Dataset\PAF\kicking\houjing_3.3.aedat
-G:\Dataset\PAF\kicking\liuxingbo_3.2.aedat
-G:\Dataset\PAF\kicking\ningxiangyu_3.1.aedat
-G:\Dataset\PAF\kicking\tanglixuan_3.3.aedat
-G:\Dataset\PAF\kicking\zhangliming_3.2.aedat
-G:\Dataset\PAF\picking up\chenjieneng_4.1.aedat
-G:\Dataset\PAF\picking up\houjing_4.3.aedat
-G:\Dataset\PAF\picking up\liuxingbo_4.2.aedat
-G:\Dataset\PAF\picking up\ningxiangyu_4.1.aedat
-G:\Dataset\PAF\picking up\tanglixuan_4.3.aedat
-G:\Dataset\PAF\picking up\zhangliming_4.2.aedat
-G:\Dataset\PAF\sit down\chenjieneng_6.2.aedat
-G:\Dataset\PAF\sit down\houjing_6.3.aedat
-G:\Dataset\PAF\sit down\liuxingbo_6.2.aedat
-G:\Dataset\PAF\sit down\ningxiangyu_6.1.aedat
-G:\Dataset\PAF\sit down\tanglixuan_6.3.aedat
-G:\Dataset\PAF\sit down\zhangliming_6.2.aedat
-G:\Dataset\PAF\throwing\chenjieneng_7.1.aedat
-G:\Dataset\PAF\throwing\houjing_7.3.aedat
-G:\Dataset\PAF\throwing\liuxingbo_7.2.aedat
-G:\Dataset\PAF\throwing\ningxiangyu_7.1.aedat
-G:\Dataset\PAF\throwing\tanglixuan_7.3.aedat
-G:\Dataset\PAF\throwing\zhangliming_7.2.aedat
-G:\Dataset\PAF\turning around\chenjieneng_8.1.aedat
-G:\Dataset\PAF\turning around\houjing_8.3.aedat
-G:\Dataset\PAF\turning around\liuxingbo_8.2.aedat
-G:\Dataset\PAF\turning around\ningxiangyu_8.1.aedat
-G:\Dataset\PAF\turning around\tanglixuan_8.3.aedat
-G:\Dataset\PAF\turning around\zhangliming_8.2.aedat
-G:\Dataset\PAF\walking\chenjieneng_9.1.aedat
-G:\Dataset\PAF\walking\houjing_9.3.aedat
-G:\Dataset\PAF\walking\liuxingbo_9.2.aedat
-G:\Dataset\PAF\walking\ningxiangyu_9.1.aedat
-G:\Dataset\PAF\walking\tanglixuan_9.3.aedat
-G:\Dataset\PAF\walking\zhangliming_9.2.aedat
-G:\Dataset\PAF\waving\chenjieneng_10.1.aedat
-G:\Dataset\PAF\waving\houjing_10.3.aedat
-G:\Dataset\PAF\waving\liuxingbo_10.2.aedat
-G:\Dataset\PAF\waving\ningxiangyu_10.1.aedat
-G:\Dataset\PAF\waving\tanglixuan_10.3.aedat
-G:\Dataset\PAF\waving\zhangliming_10.2.aedat
+\PAF\arm crossing\houjing_1.2.aedat
+\PAF\arm crossing\liuxingbo_1.1.aedat
+\PAF\arm crossing\miaoshu_1.3.aedat
+\PAF\arm crossing\tanglixuan_1.2.aedat
+\PAF\arm crossing\zhangliming_1.1.aedat
+\PAF\arm crossing\ziyang_1.3.aedat
+\PAF\get up\houjing_2.2.aedat
+\PAF\get up\liuxingbo_2.1.aedat
+\PAF\get up\miaoshu_2.3.aedat
+\PAF\get up\tanglixuan_2.2.aedat
+\PAF\get up\zhangliming_2.1.aedat
+\PAF\get up\ziyang_2.3.aedat
+\PAF\jumping\houjing_5.2.aedat
+\PAF\jumping\liuxingbo_5.1.aedat
+\PAF\jumping\tanglixuan_5.3.aedat
+\PAF\jumping\zhangliming_5.2.aedat
+\PAF\kicking\chenjieneng_3.1.aedat
+\PAF\kicking\houjing_3.3.aedat
+\PAF\kicking\liuxingbo_3.2.aedat
+\PAF\kicking\ningxiangyu_3.1.aedat
+\PAF\kicking\tanglixuan_3.3.aedat
+\PAF\kicking\zhangliming_3.2.aedat
+\PAF\picking up\chenjieneng_4.1.aedat
+\PAF\picking up\houjing_4.3.aedat
+\PAF\picking up\liuxingbo_4.2.aedat
+\PAF\picking up\ningxiangyu_4.1.aedat
+\PAF\picking up\tanglixuan_4.3.aedat
+\PAF\picking up\zhangliming_4.2.aedat
+\PAF\sit down\chenjieneng_6.2.aedat
+\PAF\sit down\houjing_6.3.aedat
+\PAF\sit down\liuxingbo_6.2.aedat
+\PAF\sit down\ningxiangyu_6.1.aedat
+\PAF\sit down\tanglixuan_6.3.aedat
+\PAF\sit down\zhangliming_6.2.aedat
+\PAF\throwing\chenjieneng_7.1.aedat
+\PAF\throwing\houjing_7.3.aedat
+\PAF\throwing\liuxingbo_7.2.aedat
+\PAF\throwing\ningxiangyu_7.1.aedat
+\PAF\throwing\tanglixuan_7.3.aedat
+\PAF\throwing\zhangliming_7.2.aedat
+\PAF\turning around\chenjieneng_8.1.aedat
+\PAF\turning around\houjing_8.3.aedat
+\PAF\turning around\liuxingbo_8.2.aedat
+\PAF\turning around\ningxiangyu_8.1.aedat
+\PAF\turning around\tanglixuan_8.3.aedat
+\PAF\turning around\zhangliming_8.2.aedat
+\PAF\walking\chenjieneng_9.1.aedat
+\PAF\walking\houjing_9.3.aedat
+\PAF\walking\liuxingbo_9.2.aedat
+\PAF\walking\ningxiangyu_9.1.aedat
+\PAF\walking\tanglixuan_9.3.aedat
+\PAF\walking\zhangliming_9.2.aedat
+\PAF\waving\chenjieneng_10.1.aedat
+\PAF\waving\houjing_10.3.aedat
+\PAF\waving\liuxingbo_10.2.aedat
+\PAF\waving\ningxiangyu_10.1.aedat
+\PAF\waving\tanglixuan_10.3.aedat
+\PAF\waving\zhangliming_10.2.aedat
