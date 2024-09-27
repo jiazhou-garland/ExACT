@@ -92,4 +92,4 @@ This repository is released under the [MIT](LICENSE) License.
 
 ---
 # Contact
-If you have any question about this project, please feel free to contact jiazhouzhou@hkust-gz.edu.cn.
+If you have any question about this project, please feel free to contact jiazhou.garland@gmail.com.
