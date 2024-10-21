@@ -102,7 +102,7 @@ def train_one_epoch(model, cfg, scaler, optimizer, scheduler, dataloader, epoch)
     return epoch_loss
 
 def evaluate_one_epoch(model, cfg, dataloader, classnames_num, logit_scale, evaluate_one_epoch=True):
-    classnames_idxs = [0,1,2,3,4,5,6,7,8,9]
+    classnames_idxs = torch.from_numpy(np.arange(0, classnames_num))
     total, hit1_ev, hit5_ev, hit1_ev_ori, hit5_ev_ori = 0, 0, 0, 0, 0
     model = model.eval().float()
     all_logits_te_e, all_logits_te_e_ori = [], []
