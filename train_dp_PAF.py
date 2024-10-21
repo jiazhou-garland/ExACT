@@ -102,11 +102,7 @@ def train_one_epoch(model, cfg, scaler, optimizer, scheduler, dataloader, epoch)
     return epoch_loss
 
 def evaluate_one_epoch(model, cfg, dataloader, classnames_num, logit_scale, evaluate_one_epoch=True):
-    classnames_idxs = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,
-                       1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,
-                       1011,1012,1013,1014,1015,1016,1017,1018,1019,1020,
-                       2000,2001,2002,2003,2004,2005,2006,
-                       3000,3001,3002,3003,3004,3005,3006]
+    classnames_idxs = [0,1,2,3,4,5,6,7,8,9]
     total, hit1_ev, hit5_ev, hit1_ev_ori, hit5_ev_ori = 0, 0, 0, 0, 0
     model = model.eval().float()
     all_logits_te_e, all_logits_te_e_ori = [], []
