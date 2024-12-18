@@ -92,4 +92,4 @@ This repository is released under the [MIT](LICENSE) License.
 
 ---
 # Contact
-If you have any questions about this project, please open an issue in this repository.
+If you have any questions about this project, please open an issue in this repository or send an email to jiazhou.garland@gmail.com.
