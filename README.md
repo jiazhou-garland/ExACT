@@ -34,7 +34,7 @@ Also remember to change your dataset directory path in **dataset_name.py**.
 ````
 python ./ExACT/Dataloader/AFE Preprocessing/dataset_name.py
 ````
-5. Replace your {dataset name}_sampled_train.txt and {dataset name}_sampled_val.txt in corresponding files based on your sampled event frames after the AFE.
+5. Replace your **{dataset name}_sampled_train.txt** and **{dataset name}_sampled_val.txt** in corresponding files based on your sampled event frames after the AFE.
 6. Change the **dataset_name.yaml** file in the **Configs** folder, namely modifying **config['MODEL']['Load_Path'],
 config['MODEL']['BACKBONE']['PRE_trained_model'], config['Dataset']['Train']['Path'], config['Dataset']['Val']['Path'], and  config['Dataset']['Classnames']**.
 7. Finally, evaluate the ExACT using the following command!
